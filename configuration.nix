@@ -16,6 +16,11 @@
 
   boot.loader.limine = {
     enable = true;
+    extraEntries = ''
+            /Windows
+              protocol: efi
+              path: uuid(8b4cb854-1bd9-4399-a389-943950b4972c):/EFI/Microsoft/Boot/bootmgfw.efi
+      '';
   };
 
   networking.hostName = "txs_nixos1"; # Define your hostname.

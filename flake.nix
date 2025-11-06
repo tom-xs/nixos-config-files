@@ -8,7 +8,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     # Please replace my-nixos with your hostname
-    nixosConfigurations.txsnixos1 = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.txs-nixos1 = nixpkgs.lib.nixosSystem {
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect

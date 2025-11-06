@@ -21,7 +21,7 @@ in
   };
 
   home-manager.users.tomasxs = { pkgs, ... }: {
-    home.packages = with pkgs; [ atool httpie ];
+    home.packages = with pkgs; [ neovim atool httpie ];
     programs.bash.enable = true;
   
     # Let Home Manager install and manage itself.

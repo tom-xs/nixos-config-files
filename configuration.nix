@@ -27,7 +27,7 @@
       '';
   };
 
-  networking.hostName = "txs_nixos1"; # Define your hostname.
+  networking.hostName = "txs-nixos1"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -102,8 +102,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    git
   ];
+
+  environment.variables.EDITOR = "vim";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

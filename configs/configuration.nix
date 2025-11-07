@@ -29,7 +29,7 @@
   # Nvidia drivers configuration
   hardware.graphics.enable = true;
 
-  networking.hostName = "txs-nixos1"; # Define your hostname.
+  networking.hostName = "camaragibe"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

@@ -9,6 +9,7 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     # Please replace my-nixos with your hostname
     nixosConfigurations.txs-nixos1 = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit input; };
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect

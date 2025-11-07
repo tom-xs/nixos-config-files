@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake";
+  description = "My nixos Flake Configuration";
 
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
@@ -7,14 +7,16 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    # Please replace my-nixos with your hostname
-    nixosConfigurations.txs-nixos1 = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit input; };
-      modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
-        ./configuration.nix
-      ];
+    nixosConfigurations = { 
+      txs-nixos1 = nixpkgs.lib.nixosSystem {
+        # specialArgs = { inherit input; };
+        modules = [
+          ./configs/configuration.nix
+          ./configs/nvidia-configuration.nix
+
+          ./home/home.nix
+        ];
+      };
     };
   };
 }

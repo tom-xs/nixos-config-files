@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./home-manager.nix
+      ./nvidia-configuration.nix
     ];
 
   # Enable flakes
@@ -26,6 +27,9 @@
               path: uuid(8b4cb854-1bd9-4399-a389-943950b4972c):/EFI/Microsoft/Boot/bootmgfw.efi
       '';
   };
+
+  # Nvidia drivers configuration
+  hardware.graphics.enable = true;
 
   networking.hostName = "txs-nixos1"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -54,6 +58,9 @@
     LC_TELEPHONE = "pt_BR.UTF-8";
     LC_TIME = "pt_BR.UTF-8";
   };
+
+  # Enable Nvidia Drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;

@@ -24,12 +24,16 @@ in
     ];
   };
 
+  home-manager.backupFileExtension = "backup";
   home-manager.users.tomasxs = { pkgs, ... }: {
-    home.packages = with pkgs; [ neovim atool httpie ];
-    programs.bash.enable = true;
-  
+    imports = [
+      ./programs/niri/default.nix
+    ];
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
+
+    home.packages = with pkgs; [ neovim atool httpie ];
+    programs.bash.enable = true;
 
     programs.git = {
       enable = true;

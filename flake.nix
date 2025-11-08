@@ -9,7 +9,7 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = { 
       camaragibe = nixpkgs.lib.nixosSystem {
-        # specialArgs = { inherit input; };
+        specialArgs = { inherit inputs; };
         modules = [
           ./configs/configuration.nix
           ./configs/nvidia-configuration.nix

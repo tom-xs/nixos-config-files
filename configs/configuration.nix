@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Load windows managers configurations
+      ./windows-managers/niri.nix
     ];
 
   # Enable flakes

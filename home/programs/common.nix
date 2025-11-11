@@ -1,4 +1,3 @@
-# home/programs/niri.nix
 { pkgs, ... }:
 
 {
@@ -7,11 +6,7 @@
 
   # Ensure key utilities are available for Home Manager sessions
   home.packages = with pkgs; [
-    swaybg  # For setting wallpapers
-    fuzzel
-    swaylock
-    swayidle
-    xwayland-satellite
+    ghostty
   ];
 
   # Enable Waybar if you wish to use it (launched on startup in the default config)[citation:1]
